@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h1>Lista de Clientes</h1>
+        {% for c in clientes %}
+            <li>{{c}}</li>
+            <button><a href="{% url 'eliminar' c.id %}">Eliminar</a></button>
+            <button><a href="{% url 'editar' c.id %}">Editar</a></button>
+            {% endfor %}
+{% endblock %}

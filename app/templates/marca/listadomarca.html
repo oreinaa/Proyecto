@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h1>Lista de Marcas</h1>
+        {% for m in marcas %}
+            <li>{{m}}</li>
+            <button><a href="{% url 'eliminar' m.id %}">Eliminar</a></button>
+            <button><a href="{% url 'editar' m.id %}">Editar</a></button>
+            {% endfor %}
+{% endblock %}
